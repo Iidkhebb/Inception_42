@@ -5,59 +5,62 @@ networks:
     name: warper-network
     driver: bridge
 
-# volumes:
-#   wp:
-#     driver: local
-#     name: wp
-#     driver_opts:
-#       type: none
-#       device: /mnt/c/Users/21267/OneDrive/Desktop/inception_42/srcs/vl_test/wp #<- /home/{USER}/data/wordpress
-#       o: bind
-#   db:
-#     driver: local
-#     name: db
-#     driver_opts:
-#       type: none
-#       device: /mnt/c/Users/21267/OneDrive/Desktop/inception_42/srcs/vl_test/db #<- /home/{USER}/data/mariadb
-#       o: bind
+volumes:
+  wp:
+    driver: local
+    name: wp
+    driver_opts:
+      type: none
+      device: C:\Users\21267\OneDrive\Desktop\push\srcs\vl_test\wp_vl
+      # device: /mnt/c/Users/21267/OneDrive/Desktop/push/srcs/vl_test/wp_vl
+      o: bind
+
+  db:
+    driver: local
+    name: db
+    driver_opts:
+      type: none
+      device: C:\Users\21267\OneDrive\Desktop\push\srcs\vl_test\db
+      # device: /mnt/c/Users/21267/OneDrive/Desktop/push/srcs/vl_test/db
+      o: bind
 
 services:
-#   mariadb:
-#     container_name: mariadb
-#     build: ./requirements/mariadb
-#     env_file:
-#       - .env
-#     networks:
-#       - warper-network
-#     volumes:
-#       - db:/var/lib/mysql
-#     restart: unless-stopped
+  mariadb:
+    container_name: mariadb
+    build: ./requirements/mariadb
+    env_file:
+      - .env
+    networks:
+      - warper-network
+    volumes:
+      - db:/var/lib/mysql
+    restart: unless-stopped
   
-#   wordpress:
-#     container_name: wordpress
-#     build: ./requirements/wordpress
-#     networks:
-#       - warper-network
-#     volumes:
-#       - wp:/var/www/html
-#     env_file:
-#       - .env
-#     depends_on:
-#       - mariadb
-#     restart: unless-stopped
+  wordpress:
+    container_name: wordpress
+    build: ./requirements/wordpress
+    networks:
+      - warper-network
+    volumes:
+      - wp:/var/www/html
+    env_file:
+      - .env
+    depends_on:
+      - mariadb
+    restart: unless-stopped
   
-#   nginx:
-#     container_name: nginx
-#     build: ./requirements/nginx
-#     ports:
-#       - "443:443"
-#     volumes:
-#       - wp:/var/www/html
-#     networks:
-#       - warper-network
-#     depends_on:
-#       - wordpress
-#     restart: unless-stopped
+  nginx:
+    container_name: nginx
+    build: ./requirements/nginx
+    ports:
+      - "443:443"
+    volumes:
+      - wp:/var/www/html
+    networks:
+      - warper-network
+    depends_on:
+      - wordpress
+    restart: unless-stopped
   
   website:
     container_name: website
@@ -66,8 +69,4 @@ services:
       - "8000:8000"
     networks:
       - warper-network
-    # depends_on:
-    #   - nginx
-    #   - wordpress
-    #   - mariadb
     restart: unless-stopped
