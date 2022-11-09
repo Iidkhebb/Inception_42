@@ -1,0 +1,159 @@
+:root {
+	--black: #171321;
+    --dkblue: #0d314b;
+    --plum: #4b0d49;
+    --hotmag: #ff17e4;
+    --magenta: #e310cb;
+    --aqua: #86fbfb;
+    --white: #f7f8fa;
+    --font-size: 1.3rem;
+    --mono: "Oxygen mono", monospace;
+    --sans: Oxygen, sans-serif;
+}
+.login-div
+{
+	background-color: #a5a5a503;
+	color: var(--white);
+	font-family: var(--sans);
+	font-size: 1rem;
+	padding: 2rem;
+	border-radius: 0.8rem;
+	box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
+	width: 60%;
+	margin: 2rem auto;
+}
+
+.login-div h4
+{
+	text-align: center;
+	font-weight: normal;
+	font-size: 15px;
+	margin-bottom: 0.1rem;
+	font-family: var(--sans);
+}
+
+.form-items
+{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 1.2rem;
+}
+
+
+.title-login {
+	font-size: 25px;
+	font-weight: bold;
+	color: var(--white);
+	text-align: center;
+}
+.form-items label
+{
+	display: none;
+}
+
+.form-items input
+{
+	background-color: #c7c5e42e;
+	border-radius: .8rem;
+	border: 1px solid;
+	border-color: rgb(199,82,230);
+	font-family: var(--mono);
+	text-align: left;
+	text-indent: 10px;
+	height: 2.5em;
+	width: 18rem;
+	box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
+	margin-top: 1.2rem;
+}
+
+.form-items input:focus
+{
+	outline: none;
+	border-color: rgb(20, 70, 75);
+}
+
+.signup-p
+{
+	text-align: center;
+	font-family: var(--mono);
+	color: var(--white);
+	font-weight: normal;
+	font-size: .85rem;
+	margin-top: 1.1rem;
+}
+.signup-p a
+{
+	color: var(--aqua);
+	text-decoration: none;
+}
+
+
+.form-items .login-btn
+{
+	margin-top: 1rem;
+	color: #171321;
+	font-weight: bold;
+	text-align: center;
+	font-size: 1rem;
+	font-family: var(--mono);
+	height: 1.9rem;
+	text-indent: 0px;
+	margin-top: 2rem;
+	background: rgb(199,82,230);
+background: radial-gradient(circle, rgba(199,82,230,0.9763313609467456) 26%, rgba(233,54,232,0.9053254437869822) 68%);
+	border: var(--plum) 1px solid;
+	border-radius: 0.8rem;
+	box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
+}
+.form-items .login-btn:hover
+{
+	background-color: #855183;
+	color: var(--white);
+}
+
+.signup-p .nav-section
+{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	text-align: center;
+	padding: 0;
+	margin-top: 0rem;
+}
+
+.signup-p .nav-section h2
+{
+	border: var(--plum) 1px solid;
+	padding: 0.5rem;
+	border-radius: 0.8rem;
+	font-family: var(--sans);
+	font-size: 10px;
+	font-weight: bold;
+	color: var(--white);
+	background-color: #8f809d3b;
+	border-color: #f7f8fa14;
+	box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
+}
+
+.signup-p .nav-section a, .signup-p .nav-section [class*="fa-"]
+{
+	color: var(--white);
+	font-size: 10px;
+	margin-right: 4px;
+	text-decoration: none;
+}
+
+.form-items .errorlist
+{
+	color: #f464ab;
+	font-size: .8rem;
+	font-family: var(--sans);
+	margin-top: 0.5rem;
+	text-decoration: none;
+	text-align: center;
+	list-style-type: none;
+	
+}

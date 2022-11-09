@@ -1,0 +1,30 @@
+{% extends 'base.html'%}
+
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'login.css'%}">
+<div class="login-div">
+	<h1 class="title-login">Welcome Back</h1>
+	<h4>Enter your details to get sign in to your account.</h3>
+	<form action="{% url 'accounts:login' %}" method="post" class="form-items">
+	{% csrf_token%}
+	{{form}}
+	<input type="submit" value="login" class="login-btn">
+	<!-- <button type="submit" class="btn btn-primary">Logout</button> -->
+</form>
+
+<div class="signup-p">
+
+	<p class="signup-option">-- Or Sign in with --</p>
+	<nav class="nav-section">
+		<ul>
+			<li><h2><a href="#resume" > <i class="fa-brands fa-google"></i> <span>Google</span></a></li>
+				<li><h2><a href="#resume" > <i class="fa-brands fa-facebook"></i> <span>FaceBook</span></a></li>
+					<li><h2><a href="#resume" > <i class="fa-brands fa-apple"></i> <span>Apple ID</span></a></li>
+					</ul>
+				</nav>
+				<p >Not a member? <a href="#">Signup</a></p>
+			</div>
+			
+</div>
+{% endblock %}
