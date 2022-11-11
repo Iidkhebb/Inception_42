@@ -14,6 +14,6 @@ clean:
 	docker network rm $$(docker network ls -q)  2>/dev/null;\
 	echo "Cleaning VL Disc Space..."
 	@rm -rf ./srcs/vl_test/db/*
-	@rm -rf ./srcs/vl_test/wp/*
+	@rm -rf ./srcs/vl_test/wp_vl/*
 
 .PHONY: all re down clean

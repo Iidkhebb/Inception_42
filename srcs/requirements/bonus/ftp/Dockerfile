@@ -7,9 +7,8 @@ EXPOSE 21
 EXPOSE 21000-21010
 
 RUN useradd -ms /bin/bash iidkhebb
-COPY ./conf/vsftpd.conf /www/var/vsftpd.conf
-RUN chmod +x /www/var/vsftpd.conf
+COPY ./conf/vsftpd.conf /var/www/vsftpd.conf
+
 COPY ./tools/setup.sh /var/www/setup.sh
 
-
-CMD [ "bash", "/var/www/setup.sh" ]
+ENTRYPOINT [ "bash", "/var/www/setup.sh" ]

@@ -1,4 +1,4 @@
-FROm debian:buster
+FROM debian:buster
 
 RUN apt update
 RUN apt-get install -y php7.3 php-mysqli php-fpm
