@@ -1,0 +1,4 @@
+requests==2.27.1
+Flask==2.0.3
+Flask-Cors==3.0.10
+flask-sock==0.5.2
