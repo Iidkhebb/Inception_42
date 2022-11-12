@@ -11,8 +11,7 @@ volumes:
     name: wp
     driver_opts:
       type: none
-      device: C:\Users\21267\OneDrive\Desktop\push\srcs\vl_test\wp_vl
-      # device: /mnt/c/Users/21267/OneDrive/Desktop/push/srcs/vl_test/wp_vl
+      device: /home/iidkhebb/db
       o: bind
 
   db:
@@ -20,8 +19,7 @@ volumes:
     name: db
     driver_opts:
       type: none
-      device: C:\Users\21267\OneDrive\Desktop\push\srcs\vl_test\db
-      # device: /mnt/c/Users/21267/OneDrive/Desktop/push/srcs/vl_test/db
+      device:  /home/iidkhebb/wp
       o: bind
 
 services:
