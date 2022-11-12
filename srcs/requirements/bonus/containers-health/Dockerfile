@@ -1,9 +1,10 @@
-FROM python:3.8-slim-buster
+FROM debian:buster
 
-# RUN apt update
+RUN apt update
+RUN apt install -y python3-pip
 EXPOSE 5050
 COPY ./tools/ /var/www/
 
 WORKDIR /var/www
-RUN pip install -r requirements.txt
-CMD [ "python", "main.py" ]
+RUN pip3 install -r requirements.txt
+CMD [ "python3", "main.py" ]
