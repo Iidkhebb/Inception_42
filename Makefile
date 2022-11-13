@@ -13,7 +13,7 @@ clean:
 	docker volume rm $$(docker volume ls -q)  2>/dev/null;\
 	docker network rm $$(docker network ls -q)  2>/dev/null;\
 	echo "Cleaning VL Disc Space..."
-	@rm -rf ./srcs/vl_test/db/*
-	@rm -rf ./srcs/vl_test/wp_vl/*
+	@rm -rf /home/iidkhebb/db/*
+	@rm -rf /home/iidkhebb/wp_vl/*
 
 .PHONY: all re down clean
